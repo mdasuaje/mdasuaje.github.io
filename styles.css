@@ -234,7 +234,7 @@ a.tag {
     .social-grid {
         grid-template-columns: 1fr;
     }
-     
+
     .cv-contact-info {
         grid-template-columns: 1fr;
         text-align: center;

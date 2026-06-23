@@ -1,9 +1,33 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mauro D. Asuaje G. | Systems Engineer</title>
+    
+    <!-- SEO & Identity Meta Tags -->
+    <title>Mauro D. Asuaje G. | Growth Systems Engineer</title>
+    <meta name="description" content="Portfolio & Resume of Mauro D. Asuaje G. - Growth Systems Engineer & Document Intelligence Architect. CLI-First, Zero-Trust, Agentic Workflows.">
+    <meta name="author" content="Mauro D. Asuaje G.">
+    
+    <!-- OpenGraph / Social Media -->
+    <meta property="og:title" content="Mauro D. Asuaje G. | Systems Engineer">
+    <meta property="og:description" content="Growth Systems Engineer & Document Intelligence Architect. Experto en flujos agénticos y arquitectura serverless.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mdasuaje.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mauro D. Asuaje G.",
+      "jobTitle": "Growth Systems Engineer",
+      "url": "https://mdasuaje.github.io/",
+      "knowsAbout": ["Document Intelligence", "Growth Automation", "Quantitative Engineering", "Serverless Architecture", "Agentic Workflows"]
+    }
+    </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap');
 
@@ -13,8 +37,8 @@
             --bg-surface-hover: #1a1a1a;
             --text-primary: #e0e0e0;
             --text-secondary: #888888;
-            --accent-muted: #1e4d2b; /* Subtle dark emerald */
-            --accent-bright: #2ecc71; /* Clean green for tiny accents */
+            --text-muted: #555555;
+            --accent-bright: #2ecc71;
             --border-dim: #222222;
         }
 
@@ -34,12 +58,7 @@
             padding: 4rem 2rem;
         }
 
-        /* Typography */
-        h1, h2, h3 {
-            font-weight: 600;
-            margin: 0;
-            color: #ffffff;
-        }
+        h1, h2, h3 { font-weight: 600; margin: 0; color: #ffffff; }
 
         .mono {
             font-family: 'JetBrains Mono', monospace;
@@ -52,6 +71,7 @@
             margin-bottom: 5rem;
             border-bottom: 1px solid var(--border-dim);
             padding-bottom: 3rem;
+            position: relative;
         }
 
         .hero-badge {
@@ -63,43 +83,23 @@
             border-radius: 4px;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
+            animation: pulse 2s infinite;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.5rem;
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
+            70% { box-shadow: 0 0 0 5px rgba(46, 204, 113, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
         }
 
-        .hero h2 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
+        .hero h1 { font-size: 3rem; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+        .hero h2 { font-size: 1.2rem; font-weight: 400; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .lang-tag { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2rem; display: block; }
 
-        .metrics-grid {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .metric {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .metric-label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-        }
+        .metrics-grid { display: flex; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+        .metric { display: flex; flex-direction: column; }
+        .metric-value { font-size: 1.5rem; font-weight: 600; color: #ffffff; }
+        .metric-label { font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; }
 
         .cta-btn {
             display: inline-flex;
@@ -111,81 +111,41 @@
             font-weight: 600;
             font-size: 0.9rem;
             border-radius: 4px;
-            transition: opacity 0.2s ease;
+            transition: all 0.2s ease;
         }
+        .cta-btn:hover { background-color: var(--accent-bright); color: #000; }
 
-        .cta-btn:hover {
-            opacity: 0.9;
-        }
+        /* Grid */
+        .section-header { font-size: 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+        .section-header::after { content: ""; height: 1px; flex-grow: 1; background-color: var(--border-dim); }
 
-        /* Section Titles */
-        .section-header {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-header::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background-color: var(--border-dim);
-        }
-
-        /* Matrix / Phases Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-        }
-
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
         .card {
             background-color: var(--bg-surface);
             border: 1px solid var(--border-dim);
             border-radius: 6px;
             padding: 2rem;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
-
         .card:hover {
             background-color: var(--bg-surface-hover);
-            border-color: #333333;
+            border-color: var(--accent-bright);
+            transform: translateY(-2px);
         }
+        .card:hover h3::before { content: "_"; color: var(--accent-bright); position: absolute; left: 1rem; }
 
-        .card-id {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            display: block;
-        }
+        .card-id { color: var(--text-secondary); margin-bottom: 1rem; display: block; }
+        .card h3 { font-size: 1.1rem; margin-bottom: 0.8rem; padding-left: 0.5rem; }
+        
+        .bilingual-text { display: flex; flex-direction: column; gap: 0.5rem; }
+        .en-text { color: var(--text-primary); font-size: 0.95rem; margin: 0; }
+        .es-text { color: var(--text-secondary); font-size: 0.85rem; margin: 0; font-style: italic; border-left: 2px solid var(--border-dim); padding-left: 0.5rem; }
 
-        .card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-dim);
-            color: var(--text-secondary);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--border-dim); color: var(--text-secondary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.2rem; }
-            .metrics-grid { flex-direction: column; gap: 1rem; }
             .container { padding: 2rem 1.5rem; }
         }
     </style>
@@ -197,45 +157,49 @@
             <span class="hero-badge mono">STATUS: ONLINE</span>
             <h1>Mauro D. Asuaje G.</h1>
             <h2>Growth Systems Engineer & Document Intelligence Architect</h2>
+            <span class="lang-tag mono">EN (Professional) / ES (Native)</span>
             
             <div class="metrics-grid">
-                <div class="metric">
-                    <span class="metric-value mono">CLI-First</span>
-                    <span class="metric-label mono">Architecture</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value mono">Agentic</span>
-                    <span class="metric-label mono">Workflows</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value mono">Zero-Trust</span>
-                    <span class="metric-label mono">Security</span>
-                </div>
+                <div class="metric"><span class="metric-value mono">CLI-First</span><span class="metric-label mono">Architecture</span></div>
+                <div class="metric"><span class="metric-value mono">Agentic</span><span class="metric-label mono">Workflows</span></div>
+                <div class="metric"><span class="metric-value mono">Zero-Trust</span><span class="metric-label mono">Security</span></div>
             </div>
 
-            <a href="cv_main.pdf" class="cta-btn" target="_blank">View CV.pdf →</a>
+            <a href="cv_main.pdf" class="cta-btn" target="_blank" aria-label="Download Curriculum Vitae in PDF">Download CV.pdf →</a>
         </header>
 
         <!-- DOMAINS OF EXPERTISE -->
         <section>
-            <h2 class="section-header mono">01. Core Domains</h2>
+            <h2 class="section-header mono">01. Core Domains / Dominios Principales</h2>
             <div class="grid">
+                <!-- SYS.01 -->
                 <div class="card">
                     <span class="card-id mono">SYS.01</span>
                     <h3>Document Intelligence</h3>
-                    <p>Parsing agéntico, normalización de corpus y bases de conocimiento RAG. Optimización de flujos cognitivos para automatización de alto nivel.</p>
+                    <div class="bilingual-text">
+                        <p class="en-text">Agentic parsing, corpus normalization, and RAG knowledge bases. Optimization of cognitive flows for high-level automation.</p>
+                        <p class="es-text">Parsing agéntico, normalización de corpus y bases RAG. Optimización de flujos cognitivos para automatización.</p>
+                    </div>
                 </div>
 
+                <!-- SYS.02 -->
                 <div class="card">
                     <span class="card-id mono">SYS.02</span>
                     <h3>Growth Automation</h3>
-                    <p>Pipelines CLI-first, flujos AWS y arquitectura serverless. Ingeniería de sistemas orientada a la escalabilidad técnica ininterrumpida.</p>
+                    <div class="bilingual-text">
+                        <p class="en-text">CLI-first pipelines, AWS flows, and serverless architecture. Systems engineering focused on continuous technical scalability.</p>
+                        <p class="es-text">Pipelines CLI-first, flujos AWS y arquitectura serverless. Ingeniería orientada a la escalabilidad técnica ininterrumpida.</p>
+                    </div>
                 </div>
 
+                <!-- SYS.03 -->
                 <div class="card">
                     <span class="card-id mono">SYS.03</span>
                     <h3>Quantitative Engineering</h3>
-                    <p>Investigación algorítmica y análisis estadístico. Desarrollo de sistemas de ejecución automatizada de bajo impacto y precisión matemática.</p>
+                    <div class="bilingual-text">
+                        <p class="en-text">Algorithmic research and statistical analysis. Development of low-impact automated execution systems with mathematical precision.</p>
+                        <p class="es-text">Investigación algorítmica y análisis estadístico. Desarrollo de sistemas automatizados de bajo impacto y precisión matemática.</p>
+                    </div>
                 </div>
             </div>
         </section>

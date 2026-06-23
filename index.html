@@ -3,165 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Mauro D. Asuaje G.</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Mauro D. Asuaje G. | Systems Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        :root {
+            --bg-base: #050505;
+            --bg-surface: #121212;
+            --bg-surface-hover: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #888888;
+            --accent-muted: #1e4d2b; /* Subtle dark emerald */
+            --accent-bright: #2ecc71; /* Clean green for tiny accents */
+            --border-dim: #222222;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 600;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 5rem;
+            border-bottom: 1px solid var(--border-dim);
+            padding-bottom: 3rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background-color: rgba(46, 204, 113, 0.1);
+            color: var(--accent-bright);
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .metrics-grid {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Section Titles */
+        .section-header {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-header::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background-color: var(--border-dim);
+        }
+
+        /* Matrix / Phases Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            background-color: var(--bg-surface-hover);
+            border-color: #333333;
+        }
+
+        .card-id {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-dim);
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .metrics-grid { flex-direction: column; gap: 1rem; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-
-    <div class="cv-container">
-        <!-- HEADER -->
-        <header class="cv-header">
-            <div>
-                <h1 class="cv-name">Mauro D. <span>Asuaje G.</span></h1>
-                <p class="cv-title">Tech-Entrepreneur | Arquitecto de Productos y Servicios Tecnológicos</p>
-                <div class="cv-contact-info">
-                    <div><i class="fas fa-map-marker-alt"></i>Venezuela</div>
-                    <div><i class="fas fa-phone-alt"></i> <a href="tel:+584242255933">+58 426 4110986</a></div>
-                    <div><i class="fas fa-envelope"></i> <a href="mailto:mdasuaje@icloud.com">mdasuaje@icloud.com</a></div>
-                    <div><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/mdasuaje" target="_blank">in/mdasuaje</a></div>
-                    <div><i class="fab fa-github"></i> <a href="https://github.com/mdasuaje" target="_blank">github.com/mdasuaje</a></div>
-                    <div><i class="fas fa-link"></i> <a href="https://linktr.ee/mdasuaje" target="_blank">linktr.ee/mdasuaje</a></div>
+    <div class="container">
+        <!-- HERO SECTION -->
+        <header class="hero">
+            <span class="hero-badge mono">STATUS: ONLINE</span>
+            <h1>Mauro D. Asuaje G.</h1>
+            <h2>Growth Systems Engineer & Document Intelligence Architect</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric">
+                    <span class="metric-value mono">CLI-First</span>
+                    <span class="metric-label mono">Architecture</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value mono">Agentic</span>
+                    <span class="metric-label mono">Workflows</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value mono">Zero-Trust</span>
+                    <span class="metric-label mono">Security</span>
                 </div>
             </div>
-            <img src="photo.jpg" alt="Foto de Mauro Asuaje" class="cv-photo" loading="lazy" onerror="this.style.display='none'">
+
+            <a href="cv_main.pdf" class="cta-btn" target="_blank">View CV.pdf →</a>
         </header>
 
-        <main>
-            <!-- HERO / PROPUESTA DE VALOR -->
-            <section class="cv-section">
-                <h2 class="cv-section-title">Propuesta de Valor</h2>
-                <div>
-                    <p><strong>Tech-Entrepreneur building technology products/services with evidence-driven execution.</strong> Impulso ideas de desarrollo hasta convertirlas en productos reales, combinando ingeniería, estrategia de negocio y enfoque de impacto.</p>
+        <!-- DOMAINS OF EXPERTISE -->
+        <section>
+            <h2 class="section-header mono">01. Core Domains</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="card-id mono">SYS.01</span>
+                    <h3>Document Intelligence</h3>
+                    <p>Parsing agéntico, normalización de corpus y bases de conocimiento RAG. Optimización de flujos cognitivos para automatización de alto nivel.</p>
                 </div>
-            </section>
 
-            <!-- IDENTIDAD PROFESIONAL -->
-            <section class="cv-section">
-                <h2 class="cv-section-title">Identidad Profesional</h2>
-                <div>
-                    <p>Editor y constructor de soluciones digitales orientadas a resultados. Trabajo en productos, automatización y plataformas cloud, con visión emprendedora para hacer que cada iniciativa llegue a producción y genere valor medible.</p>
+                <div class="card">
+                    <span class="card-id mono">SYS.02</span>
+                    <h3>Growth Automation</h3>
+                    <p>Pipelines CLI-first, flujos AWS y arquitectura serverless. Ingeniería de sistemas orientada a la escalabilidad técnica ininterrumpida.</p>
                 </div>
-            </section>
 
-            <!-- EVIDENCIAS VERIFICABLES -->
-            <section class="cv-section">
-                <h2 class="cv-section-title">Evidencias Verificables</h2>
-                <div>
-                    <div class="cventry-description">
-                        <ul class="cv-list">
-                            <li>Perfil GitHub con repositorios públicos, iteraciones y resultados: <a href="https://github.com/mdasuaje" target="_blank">github.com/mdasuaje</a>.</li>
-                            <li>Desarrollo y liderazgo de plataforma: <a href="https://iku-cabalactiva.com" target="_blank">iku-cabalactiva.com</a>.</li>
-                            <li>Historial de ejecución remota en proyectos freelance full-stack y cloud.</li>
-                        </ul>
-                    </div>
+                <div class="card">
+                    <span class="card-id mono">SYS.03</span>
+                    <h3>Quantitative Engineering</h3>
+                    <p>Investigación algorítmica y análisis estadístico. Desarrollo de sistemas de ejecución automatizada de bajo impacto y precisión matemática.</p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- MODELO DE TRABAJO -->
-            <section class="cv-section">
-                <h2 class="cv-section-title">Modelo de Trabajo</h2>
-                <div>
-                    <div class="cvitem">
-                        <div class="cvitem-label">Bootstrapping</div>
-                        <div class="cvitem-content">Construcción de productos con recursos propios, foco en validación temprana y entrega continua.</div>
-                    </div>
-                    <div class="cvitem">
-                        <div class="cvitem-label">Independencia operativa</div>
-                        <div class="cvitem-content">Planificación, implementación y operación de productos digitales end-to-end.</div>
-                    </div>
-                    <div class="cvitem">
-                        <div class="cvitem-label">Escalabilidad financiera</div>
-                        <div class="cvitem-content">
-                            <div class="tags">
-                                <span class="tag">Bootstrapped con soporte financiero limitado</span>
-                                <span class="tag">Raise Money</span>
-                                <span class="tag">Investor Ready</span>
-                                <span class="tag">Donations Ready</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PORTAFOLIO POR LÍNEAS -->
-            <section class="cv-section">
-                <h2 class="cv-section-title">Portafolio por Líneas</h2>
-                <div>
-                    <div class="cventry">
-                        <span class="cventry-title">Personal Projects</span>
-                        <div class="cventry-description">Laboratorio de ideas, marca personal y construcción de activos digitales propios.</div>
-                    </div>
-                    <div class="cventry">
-                        <span class="cventry-title">Professional Collaborations</span>
-                        <div class="cventry-description">Servicios técnicos y consultoría para terceros con enfoque en producto y ejecución.</div>
-                    </div>
-                    <div class="cventry">
-                        <span class="cventry-title">Business / Commercial Solutions</span>
-                        <div class="cventry-description">Proyectos para usuarios finales, comercialización digital y crecimiento de canales empresariales.</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- OBJETIVO DE EVOLUCIÓN -->
-            <section class="cv-section">
-                <h2 class="cv-section-title">Objetivo de Evolución</h2>
-                <div>
-                    <p>Consolidar una operación tecnológica remota, sostenible y global para evolucionar a un estilo <strong>digital nomad</strong>, manteniendo una ruta de crecimiento gradual: bootstrapping, validación de mercado y apertura a inversión/donaciones cuando aceleren resultados.</p>
-                </div>
-            </section>
-
-            <!-- ECOSISTEMA RRSS -->
-            <section class="cv-section">
-                <h2 class="cv-section-title">Ecosistema RRSS</h2>
-                <div class="social-grid">
-                    <article class="social-card">
-                        <h3>Personal</h3>
-                        <ul class="cv-list">
-                            <li><a href="https://linktr.ee/mdasuaje" target="_blank">linktr.ee/mdasuaje</a></li>
-                            <li>Cuenta de Google con FB/IG privados.</li>
-                            <li>Página pública "Tu Digital" para publicaciones, conectada a IG: <strong>@wrk2ln</strong>.</li>
-                            <li>Cuenta Hotmail + LinkedIn.</li>
-                            <li>Incluye X (Twitter), WordPress y blogs personales.</li>
-                        </ul>
-                    </article>
-                    <article class="social-card">
-                        <h3>Profesional</h3>
-                        <ul class="cv-list">
-                            <li><a href="https://linktr.ee/wrk2ln" target="_blank">linktr.ee/wrk2ln</a></li>
-                            <li><a href="https://linkedin.com/in/mdasuaje" target="_blank">LinkedIn profesional</a></li>
-                            <li>Canales técnicos para visibilidad de carrera y colaboraciones.</li>
-                            <li>Incluye X (Twitter), WordPress y blogs profesionales.</li>
-                        </ul>
-                    </article>
-                    <article class="social-card">
-                        <h3>Empresarial / Comercial</h3>
-                        <ul class="cv-list">
-                            <li><a href="https://linktr.ee/bocdevs" target="_blank">linktr.ee/bocdevs</a></li>
-                            <li>TikTok empresarial gestionado por AI-Agent.</li>
-                            <li>Estado actual: aprobación de app en segundo intento <strong>not-approved</strong>.</li>
-                            <li>Canales para proyectos con terceros y usuarios finales.</li>
-                            <li>Incluye X (Twitter), WordPress y blogs empresariales.</li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
-
-            <!-- LLAMADO A LA ACCIÓN -->
-            <section class="cv-section">
-                <h2 class="cv-section-title">Call to Action</h2>
-                <div>
-                    <p class="cventry-description">Disponible para contratación, colaboraciones, partnerships estratégicos y conversaciones de inversión/donación para escalar productos tecnológicos.</p>
-                    <div class="tags">
-                        <a class="tag" href="mailto:mdasuaje@icloud.com">Contactar por Email</a>
-                        <a class="tag" href="https://linkedin.com/in/mdasuaje" target="_blank">Conectar en LinkedIn</a>
-                        <a class="tag" href="https://github.com/mdasuaje" target="_blank">Ver GitHub</a>
-                    </div>
-                </div>
-            </section>
-
-        </main>
+        <!-- FOOTER -->
+        <footer>
+            <span class="mono">AXIAL_ECOSYSTEM v2.0</span>
+            <span class="mono">Trasciende y Prospera</span>
+        </footer>
     </div>
 </body>
 </html>
-

@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.w3.org/2018/credentials/examples/v1"
+  ],
+  "type": ["VerifiableCredential", "CurriculumVitaeManifest"],
+  "issuer": "did:key:z6MkhaXgBZDvotDkL5257faizTI3C6yHepQBW3FsFJgv4aqp",
+  "issuanceDate": "2025-08-25T00:00:00Z",
+  "expirationDate": "2026-08-25T00:00:00Z",
+  "credentialSubject": {
+    "id": "did:key:z6MkhaXgBZDvotDkL5257faizTI3C6yHepQBW3FsFJgv4aqp",
+    "type": "CurriculumVitae",
+    "documentHash": {
+      "algorithm": "SHA-256",
+      "value": "e8a0cd65acb008ce4f63f6d58ce1149c2d838e0c1ea0636606be734360abae4e"
+    },
+    "documentFormat": "application/pdf",
+    "documentPages": 2,
+    "documentSizeBytes": 1945123,
+    "documentLanguage": "es",
+    "metadata": {
+      "title": "Curriculum Vitae - Growth Systems Engineer",
+      "version": "1.0",
+      "description": "Professional curriculum vitae manifest without PII",
+      "skills": [
+        "Growth Systems Engineering",
+        "Document Intelligence",
+        "Automation",
+        "Quality Assurance",
+        "Data Engineering"
+      ],
+      "profiles": [
+        "cv_automation",
+        "cv_qa",
+        "cv_data"
+      ]
+    }
+  },
+  "proof": {
+    "type": "DataIntegrityProof",
+    "cryptosuite": "eddsa-jcs-2022",
+    "verificationMethod": "did:key:z6MkhaXgBZDvotDkL5257faizTI3C6yHepQBW3FsFJgv4aqp#z6MkhaXgBZDvotDkL5257faizTI3C6yHepQBW3FsFJgv4aqp",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X3Kf5h3X"
+  }
+}

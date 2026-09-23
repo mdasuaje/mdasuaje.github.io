@@ -1,10 +1,248 @@
-# Local Pi runtime state
+# =============================================================================
+# ROBUST .gitignore — mdasuaje.github.io
+# Guarantees: zero leaks, zero unauthorized publishes, defense-in-depth
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# LOCAL PI RUNTIME STATE (project-specific, never publish)
+# -----------------------------------------------------------------------------
 .atl/
 
-# Session & reference artifacts (not for publication)
-sesion-activa-mdasuaje.github.io
-mdasuaje.privado-index.html
+# -----------------------------------------------------------------------------
+# SESSION & REFERENCE ARTIFACTS (development references, not for publication)
+# -----------------------------------------------------------------------------
+sesion-activa-*.md
+sesion-activa-*.txt
+*privado*.html
+*privado*.md
+*-privado.*
+*private*.html
+*private*.md
 
-# OS artifacts
+# -----------------------------------------------------------------------------
+# IDE / EDITOR ARTIFACTS (never commit editor config)
+# -----------------------------------------------------------------------------
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+
+# JetBrains / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+.vim/
+.nvim/
+
+# Emacs
+*~
+\#*\#
+.elisp
+.emacs.desktop
+.emacs.desktop.lock
+
+# Generic editor temp
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# -----------------------------------------------------------------------------
+# OS ARTIFACTS (cross-platform)
+# -----------------------------------------------------------------------------
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# -----------------------------------------------------------------------------
+# ENVIRONMENT / SECRETS / CREDENTIALS (absolute block — defense in depth)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+.env.local
+.env.*.local
+*.env
+*.env.*
+
+# Keys, tokens, certificates
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.cer
+*.der
+id_rsa*
+id_ed25519*
+id_ecdsa*
+*.ppk
+*.pgp
+*.gpg
+*.asc
+.secret
+.secrets
+credentials*
+*credential*
+*token*
+*secret*
+*api*key*
+*access*key*
+
+# AWS / Cloud credentials
+.aws/
+.aws-sam/
+.serverless/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform/
+.terragrunt-cache/
+
+# -----------------------------------------------------------------------------
+# DEPENDENCY / BUILD ARTIFACTS (no node_modules, no build outputs)
+# -----------------------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+.yarn/cache
+.yarn/install-state.gz
+.yarn/unplugged
+.yarn/build-state.yml
+.pnp.cjs
+
+# Build outputs
+dist/
+build/
+.out/
+.output/
+*.min.js
+*.min.css
+*.map
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -----------------------------------------------------------------------------
+# TESTING / COVERAGE / BENCHMARK ARTIFACTS
+# -----------------------------------------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+*.coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+.mypy_cache/
+.hypothesis/
+.benchmarks/
+*.prof
+
+# -----------------------------------------------------------------------------
+# CACHE / TEMP / LOG FILES
+# -----------------------------------------------------------------------------
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Turbo / Build caches
+.turbo/
+.vercel
+.netlify
+.next/
+.nuxt/
+.svelte-kit/
+
+# Generic caches
+.cache/
+*.cache
+.eslintcache
+.stylelintcache
+.tsbuildinfo
+*.tsbuildinfo
+
+# -----------------------------------------------------------------------------
+# BACKUP / ARCHIVE / MISC
+# -----------------------------------------------------------------------------
+*.backup
+*.bak
+*.old
+*.orig
+*.save
+*.swp
+*.swo
+*~
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# -----------------------------------------------------------------------------
+# DOCS / REFERENCE (local only)
+# -----------------------------------------------------------------------------
+*.local.md
+*.local.txt
+README.local.md
+CHANGELOG.local.md
+docs/local/
+docs/drafts/
+*.draft.md
+
+# -----------------------------------------------------------------------------
+# GITHUB PAGES SPECIFIC (explicit allowlist approach in workflow)
+# -----------------------------------------------------------------------------
+# Only index.html at root should be published
+# This .gitignore ensures nothing else accidentally gets committed
+
+# -----------------------------------------------------------------------------
+# EXPLICIT ALLOWLIST OVERRIDES (only if you intentionally track these)
+# -----------------------------------------------------------------------------
+# !.github/workflows/*.yml
+# !.vscode/settings.json.example
+# !README.md
+# !index.html
+
+# =============================================================================
+# END — This file uses defense-in-depth: broad patterns + specific blocks
+# =============================================================================

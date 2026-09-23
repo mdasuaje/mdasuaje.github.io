@@ -1,248 +1,100 @@
 # =============================================================================
-# ROBUST .gitignore — mdasuaje.github.io
-# Guarantees: zero leaks, zero unauthorized publishes, defense-in-depth
+# BULLETPROOF .gitignore — mdasuaje.github.io
+# STRATEGY: DENY BY DEFAULT, EXPLICIT ALLOWLIST ONLY
+# Guarantees: Zero leaks, zero unauthorized publishes, defense-in-depth
 # =============================================================================
 
 # -----------------------------------------------------------------------------
-# LOCAL PI RUNTIME STATE (project-specific, never publish)
+# DENY EVERYTHING BY DEFAULT (root level)
 # -----------------------------------------------------------------------------
-.atl/
+/*
 
 # -----------------------------------------------------------------------------
-# SESSION & REFERENCE ARTIFACTS (development references, not for publication)
+# EXPLICIT ALLOWLIST — Only these paths are tracked/published
 # -----------------------------------------------------------------------------
-sesion-activa-*.md
-sesion-activa-*.txt
-*privado*.html
-*privado*.md
-*-privado.*
-*private*.html
-*private*.md
+!/.gitignore
+!/index.html
+!/README.md
+!/fonts/
+!/fonts/**
+!/.well-known/
+!/.well-known/**
+!/.github/
+!/.github/**
+!/.github/workflows/
+!/.github/workflows/**
 
 # -----------------------------------------------------------------------------
-# IDE / EDITOR ARTIFACTS (never commit editor config)
+# BLOCK ALL PRIVATE / SESSION / RUNTIME ARTIFACTS (defense in depth)
+# Even if allowlist fails, these patterns catch them
 # -----------------------------------------------------------------------------
-# VS Code
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json.example
+# Private profiles (any naming convention)
+*privado*
+*private*
+*Privado*
+*Private*
 
-# JetBrains / IntelliJ
+# Session artifacts
+sesion-activa*
+session-*
+*.session.*
+
+# Pi / Agent runtime state
+/.pi/
+/.atl/
+/.gentle-ai/
+
+# IDE / Editor artifacts
+.vscode/
 .idea/
-*.iml
-*.ipr
-*.iws
-
-# Vim / Neovim
 *.swp
 *.swo
 *~
-.vim/
-.nvim/
 
-# Emacs
-*~
-\#*\#
-.elisp
-.emacs.desktop
-.emacs.desktop.lock
-
-# Generic editor temp
-*.tmp
-*.temp
-*.bak
-*.orig
-
-# -----------------------------------------------------------------------------
-# OS ARTIFACTS (cross-platform)
-# -----------------------------------------------------------------------------
-# macOS
+# OS artifacts
 .DS_Store
-.AppleDouble
-.LSOverride
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-
-# Windows
-Thumbs.db
-ehthumbs.db
 Desktop.ini
-$RECYCLE.BIN/
-*.lnk
 
-# Linux
-*~
-.fuse_hidden*
-.directory
-.Trash-*
-
-# -----------------------------------------------------------------------------
-# ENVIRONMENT / SECRETS / CREDENTIALS (absolute block — defense in depth)
-# -----------------------------------------------------------------------------
+# Environment / Secrets / Credentials (absolute block)
 .env
 .env.*
-.env.local
-.env.*.local
 *.env
-*.env.*
-
-# Keys, tokens, certificates
-*.pem
 *.key
+*.pem
 *.crt
 *.p12
 *.pfx
-*.cer
-*.der
 id_rsa*
 id_ed25519*
-id_ecdsa*
-*.ppk
-*.pgp
-*.gpg
-*.asc
-.secret
-.secrets
-credentials*
-*credential*
-*token*
 *secret*
-*api*key*
-*access*key*
-
-# AWS / Cloud credentials
+*token*
+*credential*
 .aws/
-.aws-sam/
-.serverless/
-*.tfstate
-*.tfstate.*
-*.tfvars
-*.tfvars.json
 .terraform/
-.terragrunt-cache/
 
-# -----------------------------------------------------------------------------
-# DEPENDENCY / BUILD ARTIFACTS (no node_modules, no build outputs)
-# -----------------------------------------------------------------------------
+# Build / Dependency artifacts
 node_modules/
-.pnp
-.pnp.js
-.yarn/
-.yarn/cache
-.yarn/install-state.gz
-.yarn/unplugged
-.yarn/build-state.yml
-.pnp.cjs
-
-# Build outputs
 dist/
 build/
-.out/
-.output/
-*.min.js
-*.min.css
-*.map
-
-# Package managers
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-bun.lockb
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# -----------------------------------------------------------------------------
-# TESTING / COVERAGE / BENCHMARK ARTIFACTS
-# -----------------------------------------------------------------------------
-coverage/
-.nyc_output/
-*.lcov
-*.coverage
-.coverage
-htmlcov/
-.tox/
-.pytest_cache/
-.mypy_cache/
-.hypothesis/
-.benchmarks/
-*.prof
-
-# -----------------------------------------------------------------------------
-# CACHE / TEMP / LOG FILES
-# -----------------------------------------------------------------------------
 *.log
-logs/
-*.log.*
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.pnpm-debug.log*
-
-# Turbo / Build caches
-.turbo/
-.vercel
-.netlify
-.next/
-.nuxt/
-.svelte-kit/
-
-# Generic caches
-.cache/
 *.cache
-.eslintcache
-.stylelintcache
-.tsbuildinfo
-*.tsbuildinfo
+coverage/
 
-# -----------------------------------------------------------------------------
-# BACKUP / ARCHIVE / MISC
-# -----------------------------------------------------------------------------
-*.backup
+# Backup / Archive
 *.bak
-*.old
-*.orig
-*.save
-*.swp
-*.swo
-*~
+*.backup
 *.zip
-*.tar
 *.tar.gz
-*.tgz
-*.rar
 *.7z
 
-# -----------------------------------------------------------------------------
-# DOCS / REFERENCE (local only)
-# -----------------------------------------------------------------------------
+# Local docs / drafts
 *.local.md
-*.local.txt
-README.local.md
-CHANGELOG.local.md
+*.draft.md
 docs/local/
 docs/drafts/
-*.draft.md
-
-# -----------------------------------------------------------------------------
-# GITHUB PAGES SPECIFIC (explicit allowlist approach in workflow)
-# -----------------------------------------------------------------------------
-# Only index.html at root should be published
-# This .gitignore ensures nothing else accidentally gets committed
-
-# -----------------------------------------------------------------------------
-# EXPLICIT ALLOWLIST OVERRIDES (only if you intentionally track these)
-# -----------------------------------------------------------------------------
-# !.github/workflows/*.yml
-# !.vscode/settings.json.example
-# !README.md
-# !index.html
 
 # =============================================================================
-# END — This file uses defense-in-depth: broad patterns + specific blocks
+# END — This file uses DENY-BY-DEFAULT + EXPLICIT ALLOWLIST
+# Any file not explicitly allowed above CANNOT be committed accidentally
 # =============================================================================

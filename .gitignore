@@ -1,0 +1,10 @@
+# Local Pi runtime state
+.atl/
+
+# Session & reference artifacts (not for publication)
+sesion-activa-mdasuaje.github.io
+mdasuaje.privado-index.html
+
+# OS artifacts
+.DS_Store
+Thumbs.db

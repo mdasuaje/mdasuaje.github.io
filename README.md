@@ -5,7 +5,7 @@
 
 [![Website](https://img.shields.io/badge/Website-mdasuaje.github.io-2ecc71?style=flat-square&logo=githubpages&logoColor=white)](https://mdasuaje.github.io/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-mdasuaje-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mdasuaje)
-[![GitHub](https://img.shields.io/badge/GitHub-mdasuaje-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/mdasuaje)
+[![GitHub](https://img.shields.io/badge/GitHub-mdasuaje.github.io-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/mdasuaje/mdasuaje.github.io)
 
 ---
 
@@ -67,7 +67,7 @@ Build status: [GitHub Actions → Pages workflow](https://github.com/mdasuaje/md
 
 ## Verification
 
-- **Identity**: Cross-referenced via `rel="me"` links to [LinkedIn](https://www.linkedin.com/in/mdasuaje) and [GitHub](https://github.com/mdasuaje)
+- **Identity**: Cross-referenced via `rel="me"` links to [LinkedIn](https://www.linkedin.com/in/mdasuaje) and [GitHub](https://github.com/mdasuaje/mdasuaje.github.io)
 - **Schema**: JSON-LD `Person` with `sameAs` and `knowsAbout` properties
 - **Integrity**: Single-file deployment — what you review is what serves
 

@@ -1,201 +1,732 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="dark">
-    <meta name="robots" content="index,follow">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://mdasuaje.github.io/">
+    
+    <!-- SEO & Identity Meta Tags -->
     <title>Mauro D. Asuaje G. | Professional Profile</title>
-    <meta name="description" content="Perfil profesional de Mauro D. Asuaje G.: sistemas de crecimiento, automatización e inteligencia documental.">
-    <meta property="og:type" content="website">
+    <meta name="description" content="Perfil profesional de Mauro D. Asuaje G.: sistemas de crecimiento, automatización e inteligencia documental. CLI-First, Zero-Trust, Agentic Workflows.">
+    <meta name="author" content="Mauro D. Asuaje G.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OpenGraph / Social Media -->
     <meta property="og:title" content="Mauro D. Asuaje G. | Professional Profile">
-    <meta property="og:description" content="Sistemas de crecimiento, automatización e inteligencia documental.">
+    <meta property="og:description" content="Sistemas de crecimiento, automatización e inteligencia documental. Ingeniería pragmática y reproducible.">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://mdasuaje.github.io/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mauro D. Asuaje G. | Professional Profile">
+    <meta name="twitter:description" content="Sistemas de crecimiento, automatización e inteligencia documental.">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mauro D. Asuaje G.",
+      "jobTitle": "Growth Systems Engineer",
+      "url": "https://mdasuaje.github.io/",
+      "sameAs": [
+        "https://linkedin.com/in/mdasuaje",
+        "https://github.com/mdasuaje"
+      ],
+      "knowsAbout": [
+        "Document Intelligence",
+        "Growth Automation",
+        "Systems Engineering",
+        "Serverless Architecture",
+        "Agentic Workflows"
+      ]
+    }
+    </script>
+    
+    <!-- Preconnect for fonts (system font stack with Inter fallback) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
+    
     <style>
-      :root {
-        --bg: #080b10;
-        --surface: #101722;
-        --surface-alt: #141e2b;
-        --border: #26384d;
-        --text: #edf3fa;
-        --muted: #9eafc2;
-        --accent: #76e3ae;
-        --accent-ink: #06130c;
-        --focus: #b5ffd7;
-        --max-width: 72rem;
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.6;
-      }
-      a { color: inherit; }
-      a:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-      .skip-link {
-        position: fixed;
-        left: 1rem;
-        top: -5rem;
-        z-index: 10;
-        background: var(--accent);
-        color: var(--accent-ink);
-        border-radius: .4rem;
-        padding: .6rem .8rem;
-        font-weight: 700;
-      }
-      .skip-link:focus { top: 1rem; }
-      .page { width: min(calc(100% - 2.5rem), var(--max-width)); margin: 0 auto; }
-      header {
-        padding: 1.25rem 0;
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        align-items: center;
-        border-bottom: 1px solid var(--border);
-      }
-      .wordmark, .eyebrow, .label {
-        color: var(--accent);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: .8rem;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-      }
-      .wordmark { text-decoration: none; font-weight: 700; }
-      nav { display: flex; gap: 1rem; flex-wrap: wrap; }
-      nav a { color: var(--muted); font-size: .9rem; text-underline-offset: .22em; }
-      main { padding: clamp(4rem, 12vw, 8rem) 0 4rem; }
-      .hero { max-width: 54rem; }
-      h1, h2 { line-height: 1.12; margin: 0; letter-spacing: -.035em; }
-      h1 { font-size: clamp(2.8rem, 8vw, 6rem); margin: .65rem 0 1.3rem; }
-      h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
-      .lead { color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.35rem); max-width: 48rem; }
-      .availability {
-        display: inline-flex;
-        align-items: center;
-        gap: .55rem;
-        margin-top: 1.2rem;
-        color: var(--muted);
-        font-size: .92rem;
-      }
-      .dot { height: .58rem; width: .58rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 .25rem rgb(118 227 174 / 13%); }
-      .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 2.8rem;
-        padding: .65rem 1rem;
-        border: 1px solid var(--accent);
-        border-radius: .45rem;
-        background: var(--accent);
-        color: var(--accent-ink);
-        font-weight: 750;
-        text-decoration: none;
-      }
-      .button.secondary { background: transparent; color: var(--text); border-color: var(--border); }
-      .button:hover { filter: brightness(1.08); }
-      section { margin-top: clamp(4.5rem, 10vw, 7rem); }
-      .section-heading { display: grid; gap: .7rem; max-width: 45rem; }
-      .section-heading p { color: var(--muted); margin: 0; }
-      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.8rem; }
-      .card { background: var(--surface); border: 1px solid var(--border); border-radius: .65rem; padding: 1.3rem; }
-      .card h3 { margin: .4rem 0 .5rem; font-size: 1.06rem; }
-      .card p { margin: 0; color: var(--muted); font-size: .94rem; }
-      .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.8rem; }
-      .principle { padding: 1.2rem; border-left: 3px solid var(--accent); background: var(--surface-alt); }
-      .principle strong { display: block; margin-bottom: .3rem; }
-      .principle span { color: var(--muted); font-size: .94rem; }
-      .contact { background: var(--surface); border: 1px solid var(--border); border-radius: .75rem; padding: clamp(1.4rem, 4vw, 2.4rem); }
-      .contact p { color: var(--muted); max-width: 42rem; }
-      footer { border-top: 1px solid var(--border); color: var(--muted); font-size: .84rem; padding: 1.5rem 0 2.5rem; }
-      @media (max-width: 700px) {
-        .page { width: min(calc(100% - 2rem), var(--max-width)); }
-        header { align-items: flex-start; flex-direction: column; }
-        .grid, .principles { grid-template-columns: 1fr; }
-      }
-      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+        /* ==========================================================================
+           DESIGN SYSTEM — CSS Custom Properties
+           ========================================================================== */
+        :root {
+            /* Color Palette — Dark mode first, refined contrast ratios */
+            --color-bg-base: #050505;
+            --color-bg-surface: #121212;
+            --color-bg-surface-hover: #1a1a1a;
+            --color-bg-surface-active: #222222;
+            
+            --color-text-primary: #e8e8e8;
+            --color-text-secondary: #a0a0a0;
+            --color-text-muted: #6a6a6a;
+            --color-text-inverse: #050505;
+            
+            --color-accent-primary: #2ecc71;
+            --color-accent-primary-hover: #27ae60;
+            --color-accent-primary-dim: rgba(46, 204, 113, 0.12);
+            --color-accent-primary-border: rgba(46, 204, 113, 0.28);
+            
+            --color-border-dim: #2a2a2a;
+            --color-border-bright: #3a3a3a;
+            
+            --color-focus: #2ecc71;
+            --color-focus-ring: rgba(46, 204, 113, 0.35);
+            
+            /* Typography Scale (Modular Scale 1.25) */
+            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace;
+            
+            --fs-xs: 0.75rem;    /* 12px */
+            --fs-sm: 0.875rem;   /* 14px */
+            --fs-base: 1rem;     /* 16px */
+            --fs-lg: 1.125rem;   /* 18px */
+            --fs-xl: 1.25rem;    /* 20px */
+            --fs-2xl: 1.563rem;  /* 25px */
+            --fs-3xl: 1.953rem;  /* 31px */
+            --fs-4xl: 2.441rem;  /* 39px */
+            --fs-5xl: 3.052rem;  /* 49px */
+            
+            --lh-tight: 1.1;
+            --lh-normal: 1.5;
+            --lh-relaxed: 1.75;
+            
+            /* Spacing System (8px base unit) */
+            --space-1: 0.25rem;  /* 4px */
+            --space-2: 0.5rem;   /* 8px */
+            --space-3: 0.75rem;  /* 12px */
+            --space-4: 1rem;     /* 16px */
+            --space-5: 1.25rem;  /* 20px */
+            --space-6: 1.5rem;   /* 24px */
+            --space-8: 2rem;     /* 32px */
+            --space-10: 2.5rem;  /* 40px */
+            --space-12: 3rem;    /* 48px */
+            --space-16: 4rem;    /* 64px */
+            --space-20: 5rem;    /* 80px */
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
+            --radius-full: 9999px;
+            
+            /* Shadows — layered depth */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --shadow-focus: 0 0 0 3px var(--color-focus-ring);
+            
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --transition-slow: 350ms ease;
+            
+            /* Breakpoints */
+            --bp-sm: 480px;
+            --bp-md: 768px;
+            --bp-lg: 1024px;
+            
+            /* Container */
+            --container-max: 900px;
+            --container-padding: var(--space-6);
+        }
+        
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            :root {
+                --transition-fast: 0ms;
+                --transition-normal: 0ms;
+                --transition-slow: 0ms;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* ==========================================================================
+           RESET & BASE
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        body {
+            background-color: var(--color-bg-base);
+            color: var(--color-text-primary);
+            font-family: var(--font-sans);
+            font-size: var(--fs-base);
+            line-height: var(--lh-normal);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* Skip Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: var(--space-4);
+            background: var(--color-accent-primary);
+            color: var(--color-text-inverse);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--fs-sm);
+            z-index: 10000;
+            text-decoration: none;
+            transition: top var(--transition-fast);
+        }
+        .skip-link:focus {
+            top: var(--space-4);
+            outline: none;
+            box-shadow: var(--shadow-focus);
+        }
+        
+        /* Focus Visible (Accessibility) */
+        :focus-visible {
+            outline: none;
+            box-shadow: var(--shadow-focus);
+            border-radius: var(--radius-sm);
+        }
+        
+        ::selection {
+            background-color: var(--color-accent-primary-dim);
+            color: var(--color-accent-primary);
+        }
+        
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: var(--space-16) var(--container-padding);
+        }
+        
+        h1, h2, h3 { 
+            font-weight: 600; 
+            line-height: var(--lh-tight);
+            color: #ffffff; 
+        }
+        
+        .mono {
+            font-family: var(--font-mono);
+            font-size: var(--fs-sm);
+            letter-spacing: -0.02em;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        a:hover {
+            color: var(--color-accent-primary);
+        }
+        
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero {
+            margin-bottom: var(--space-20);
+            border-bottom: 1px solid var(--color-border-dim);
+            padding-bottom: var(--space-12);
+            position: relative;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: var(--space-1) var(--space-3);
+            background-color: var(--color-accent-primary-dim);
+            color: var(--color-accent-primary);
+            border: 1px solid var(--color-accent-primary-border);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-6);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: var(--fs-xs);
+            font-weight: 600;
+        }
+        
+        .hero h1 { 
+            font-size: var(--fs-5xl); 
+            letter-spacing: -0.03em; 
+            margin-bottom: var(--space-2); 
+            line-height: 1.05;
+        }
+        .hero h2 { 
+            font-size: var(--fs-xl); 
+            font-weight: 400; 
+            color: var(--color-text-secondary); 
+            margin-bottom: var(--space-2); 
+            letter-spacing: -0.01em;
+        }
+        .lang-tag { 
+            font-size: var(--fs-xs); 
+            color: var(--color-text-muted); 
+            margin-bottom: var(--space-8); 
+            display: block; 
+            letter-spacing: 0.03em;
+        }
+        
+        .metrics-grid { 
+            display: flex; 
+            gap: var(--space-8); 
+            margin-bottom: var(--space-10); 
+            flex-wrap: wrap; 
+        }
+        .metric { 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .metric-value { 
+            font-size: var(--fs-2xl); 
+            font-weight: 600; 
+            color: #ffffff; 
+            line-height: var(--lh-tight);
+            letter-spacing: -0.02em;
+        }
+        .metric-label { 
+            font-size: var(--fs-xs); 
+            color: var(--color-text-secondary); 
+            text-transform: uppercase; 
+            letter-spacing: 0.08em;
+            margin-top: var(--space-1);
+        }
+        
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            align-items: center;
+        }
+        
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background-color: #ffffff;
+            color: #000000;
+            padding: var(--space-3) var(--space-6);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--fs-sm);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+        }
+        .cta-btn:hover { 
+            background-color: var(--color-accent-primary); 
+            color: #000; 
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        .cta-btn:active {
+            transform: translateY(0);
+        }
+        .cta-btn:focus-visible {
+            box-shadow: var(--shadow-focus);
+        }
+        
+        .cta-btn.secondary {
+            background-color: transparent;
+            color: var(--color-text-primary);
+            border-color: var(--color-border-bright);
+        }
+        .cta-btn.secondary:hover {
+            background-color: var(--color-bg-surface-hover);
+            border-color: var(--color-accent-primary);
+            color: var(--color-accent-primary);
+        }
+        
+        .cta-btn svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+        
+        /* ==========================================================================
+           SECTIONS & CARDS
+           ========================================================================== */
+        .section-header { 
+            font-size: var(--fs-2xl); 
+            margin-bottom: var(--space-8); 
+            display: flex; 
+            align-items: center; 
+            gap: var(--space-4); 
+        }
+        .section-header::after { 
+            content: ""; 
+            height: 1px; 
+            flex-grow: 1; 
+            background: linear-gradient(90deg, var(--color-border-dim) 0%, transparent 100%);
+        }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: var(--space-6); 
+            margin-bottom: var(--space-16); 
+        }
+        
+        .card { 
+            background-color: var(--color-bg-surface); 
+            border: 1px solid var(--color-border-dim); 
+            border-radius: var(--radius-lg); 
+            padding: var(--space-6); 
+            transition: all var(--transition-normal); 
+            position: relative; 
+        }
+        .card:hover { 
+            background-color: var(--color-bg-surface-hover); 
+            border-color: var(--color-accent-primary-border); 
+            transform: translateY(-2px); 
+            box-shadow: var(--shadow-lg); 
+        }
+        .card:focus-within {
+            border-color: var(--color-accent-primary);
+            box-shadow: var(--shadow-focus);
+        }
+        
+        .card-id { 
+            color: var(--color-text-secondary); 
+            margin-bottom: var(--space-3); 
+            display: block; 
+            font-size: var(--fs-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .card h3 { 
+            font-size: var(--fs-lg); 
+            margin-bottom: var(--space-4); 
+            padding-left: var(--space-3); 
+            border-left: 3px solid var(--color-accent-primary);
+        }
+        
+        .bilingual-text { 
+            display: flex; 
+            flex-direction: column; 
+            gap: var(--space-3); 
+        }
+        .en-text { 
+            color: var(--color-text-primary); 
+            font-size: var(--fs-base); 
+            margin: 0; 
+            line-height: var(--lh-relaxed);
+        }
+        .es-text { 
+            color: var(--color-text-secondary); 
+            font-size: var(--fs-sm); 
+            margin: 0; 
+            font-style: italic; 
+            border-left: 2px solid var(--color-border-dim); 
+            padding-left: var(--space-3);
+            line-height: var(--lh-relaxed);
+        }
+        
+        /* ==========================================================================
+           PRINCIPLES SECTION
+           ========================================================================== */
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+        
+        .principle {
+            background-color: var(--color-bg-surface);
+            border: 1px solid var(--color-border-dim);
+            border-left: 3px solid var(--color-accent-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+        .principle:hover {
+            border-left-color: var(--color-accent-primary-hover);
+            background-color: var(--color-bg-surface-hover);
+            transform: translateX(4px);
+        }
+        .principle strong {
+            display: block;
+            margin-bottom: var(--space-2);
+            font-size: var(--fs-base);
+            color: #ffffff;
+        }
+        .principle span {
+            color: var(--color-text-secondary);
+            font-size: var(--fs-sm);
+            line-height: var(--lh-relaxed);
+        }
+        
+        /* ==========================================================================
+           CONTACT SECTION
+           ========================================================================== */
+        .contact {
+            background-color: var(--color-bg-surface);
+            border: 1px solid var(--color-border-dim);
+            border-radius: var(--radius-lg);
+            padding: var(--space-10);
+            text-align: center;
+        }
+        .contact h2 {
+            margin-bottom: var(--space-4);
+        }
+        .contact p {
+            color: var(--color-text-secondary);
+            max-width: 42rem;
+            margin: 0 auto var(--space-6);
+            font-size: var(--fs-base);
+            line-height: var(--lh-relaxed);
+        }
+        
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        footer { 
+            margin-top: var(--space-20); 
+            padding-top: var(--space-8); 
+            border-top: 1px solid var(--color-border-dim); 
+            color: var(--color-text-secondary); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: var(--space-4); 
+            font-size: var(--fs-sm);
+        }
+        footer .mono {
+            font-size: var(--fs-xs);
+        }
+        
+        /* ==========================================================================
+           RESPONSIVE
+           ========================================================================== */
+        @media (max-width: 768px) {
+            :root {
+                --fs-5xl: 2.5rem;
+                --fs-4xl: 2rem;
+                --fs-3xl: 1.5rem;
+                --fs-2xl: 1.25rem;
+            }
+            .container { 
+                padding: var(--space-10) var(--space-4); 
+            }
+            .metrics-grid { 
+                gap: var(--space-6); 
+            }
+            .grid { 
+                grid-template-columns: 1fr; 
+            }
+            .principles {
+                grid-template-columns: 1fr;
+            }
+            footer { 
+                flex-direction: column; 
+                text-align: center; 
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 { font-size: var(--fs-4xl); }
+            .hero h2 { font-size: var(--fs-lg); }
+            .cta-btn { 
+                width: 100%; 
+                justify-content: center; 
+            }
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cta-group .cta-btn {
+                width: 100%;
+            }
+        }
+        
+        /* ==========================================================================
+           PRINT STYLES
+           ========================================================================== */
+        @media print {
+            .hero-badge, .cta-btn, .cta-group, .metrics-grid, .lang-tag, .skip-link {
+                display: none;
+            }
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+                line-height: 1.6;
+            }
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+            .card {
+                break-inside: avoid;
+                border: 1px solid #ccc;
+                box-shadow: none;
+                background: white;
+            }
+            .principle {
+                break-inside: avoid;
+                border: 1px solid #ccc;
+                background: #fafafa;
+            }
+            .contact {
+                border: 1px solid #ccc;
+                background: white;
+            }
+            h1, h2, h3 { color: black; }
+            .card h3 { border-left-color: #333; }
+            .principle { border-left-color: #333; }
+            a { text-decoration: none; color: black; }
+            .en-text { color: black; }
+            .es-text { color: #555; }
+        }
     </style>
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-    <div class="page">
-      <header>
-        <a class="wordmark" href="/" aria-label="Inicio">MDA / PROFILE</a>
-        <nav aria-label="Navegación principal">
-          <a href="#especialidades">Especialidades</a>
-          <a href="#principios">Principios</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-      </header>
-
-      <main id="main-content">
-        <section class="hero" aria-labelledby="profile-title">
-          <p class="eyebrow">Professional profile</p>
-          <h1 id="profile-title">Mauro D. Asuaje G.</h1>
-          <p class="lead">Diseño sistemas de crecimiento, automatización e inteligencia documental con una aproximación pragmática, reproducible y orientada a resultados.</p>
-          <p class="availability"><span class="dot" aria-hidden="true"></span> Perfil público con divulgación mínima de datos.</p>
-          <div class="actions">
-            <a class="button" href="https://www.linkedin.com/in/mdasuaje" target="_blank" rel="me noopener noreferrer">Ver perfil en LinkedIn <span aria-hidden="true">↗</span></a>
-            <a class="button secondary" href="https://github.com/mdasuaje" target="_blank" rel="me noopener noreferrer">Ver trabajo público en GitHub <span aria-hidden="true">↗</span></a>
-          </div>
-        </section>
-
-        <section id="especialidades" aria-labelledby="specialties-title">
-          <div class="section-heading">
-            <p class="eyebrow">01 / Especialidades</p>
-            <h2 id="specialties-title">Capacidades profesionales</h2>
-            <p>Una síntesis intencionalmente breve de áreas de trabajo; los detalles se comparten en contextos profesionales adecuados.</p>
-          </div>
-          <div class="grid">
-            <article class="card">
-              <p class="label">SYS.01</p>
-              <h3>Inteligencia documental</h3>
-              <p>Normalización de información, flujos de conocimiento y diseño de sistemas para trabajar con documentos a escala.</p>
-            </article>
-            <article class="card">
-              <p class="label">SYS.02</p>
-              <h3>Automatización de crecimiento</h3>
-              <p>Procesos repetibles, integración de herramientas y operaciones diseñadas para reducir fricción y aumentar claridad.</p>
-            </article>
-            <article class="card">
-              <p class="label">SYS.03</p>
-              <h3>Ingeniería de sistemas</h3>
-              <p>Arquitectura práctica, mejora continua y decisiones técnicas con atención a seguridad y mantenibilidad.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="principios" aria-labelledby="principles-title">
-          <div class="section-heading">
-            <p class="eyebrow">02 / Principios</p>
-            <h2 id="principles-title">Presencia pública responsable</h2>
-          </div>
-          <div class="principles">
-            <div class="principle"><strong>Divulgación mínima</strong><span>Este sitio no publica currículums descargables, fotografías, teléfonos, correos directos ni documentación operativa.</span></div>
-            <div class="principle"><strong>Canales verificables</strong><span>Los perfiles profesionales enlazados sirven como punto de contacto y validación pública de identidad y trabajo.</span></div>
-            <div class="principle"><strong>Sin seguimiento de terceros</strong><span>La página no carga analítica, píxeles publicitarios, fuentes remotas ni scripts de terceros.</span></div>
-            <div class="principle"><strong>Información contextual</strong><span>Las credenciales, referencias o documentos se comparten sólo cuando existe una necesidad profesional legítima.</span></div>
-          </div>
-        </section>
-
-        <section id="contacto" class="contact" aria-labelledby="contact-title">
-          <p class="eyebrow">03 / Contacto</p>
-          <h2 id="contact-title">Conectemos por canales profesionales</h2>
-          <p>Para oportunidades, colaboración o verificación profesional, utiliza LinkedIn. Esto reduce la exposición de datos de contacto y conserva una vía de comunicación moderada.</p>
-          <div class="actions">
-            <a class="button" href="https://www.linkedin.com/in/mdasuaje" target="_blank" rel="me noopener noreferrer">Enviar mensaje por LinkedIn <span aria-hidden="true">↗</span></a>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <span>© Mauro D. Asuaje G.</span> · <span>Perfil profesional de información mínima.</span>
-      </footer>
+</head>
+<body>
+    <!-- Skip Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <div class="container">
+        <!-- HERO SECTION -->
+        <header class="hero">
+            <span class="hero-badge mono">PUBLIC PROFILE</span>
+            <h1>Mauro D. Asuaje G.</h1>
+            <h2>Growth Systems Engineer & Document Intelligence Architect</h2>
+            <span class="lang-tag mono">EN (Professional) / ES (Nativo)</span>
+            
+            <div class="metrics-grid">
+                <div class="metric">
+                    <span class="metric-value mono">CLI-First</span>
+                    <span class="metric-label mono">Architecture</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value mono">Agentic</span>
+                    <span class="metric-label mono">Workflows</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value mono">Zero-Trust</span>
+                    <span class="metric-label mono">Security</span>
+                </div>
+            </div>
+    
+            <div class="cta-group">
+                <a class="cta-btn" href="https://www.linkedin.com/in/mdasuaje" target="_blank" rel="me noopener noreferrer" aria-label="Ver perfil en LinkedIn">
+                    LinkedIn
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </a>
+                <a class="cta-btn secondary" href="https://github.com/mdasuaje" target="_blank" rel="me noopener noreferrer" aria-label="Ver trabajo público en GitHub">
+                    GitHub
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                    </svg>
+                </a>
+            </div>
+        </header>
+    
+        <!-- DOMAINS OF EXPERTISE -->
+        <main id="main-content">
+            <section aria-labelledby="domains-heading">
+                <h2 id="domains-heading" class="section-header mono">01. Core Domains / Dominios Principales</h2>
+                <div class="grid">
+                    <!-- SYS.01 -->
+                    <article class="card">
+                        <span class="card-id mono">SYS.01</span>
+                        <h3>Inteligencia Documental</h3>
+                        <div class="bilingual-text">
+                            <p class="en-text" lang="en">Agentic parsing, corpus normalization, and RAG knowledge bases. Optimization of cognitive flows for high-level automation.</p>
+                            <p class="es-text" lang="es">Parsing agéntico, normalización de corpus y bases RAG. Optimización de flujos cognitivos para automatización de alto nivel.</p>
+                        </div>
+                    </article>
+    
+                    <!-- SYS.02 -->
+                    <article class="card">
+                        <span class="card-id mono">SYS.02</span>
+                        <h3>Automatización de Crecimiento</h3>
+                        <div class="bilingual-text">
+                            <p class="en-text" lang="en">CLI-first pipelines, AWS flows, and serverless architecture. Systems engineering focused on continuous technical scalability.</p>
+                            <p class="es-text" lang="es">Pipelines CLI-first, flujos AWS y arquitectura serverless. Ingeniería orientada a la escalabilidad técnica ininterrumpida.</p>
+                        </div>
+                    </article>
+    
+                    <!-- SYS.03 -->
+                    <article class="card">
+                        <span class="card-id mono">SYS.03</span>
+                        <h3>Ingeniería de Sistemas</h3>
+                        <div class="bilingual-text">
+                            <p class="en-text" lang="en">Practical architecture, continuous improvement, and technical decisions with attention to security and maintainability.</p>
+                            <p class="es-text" lang="es">Arquitectura práctica, mejora continua y decisiones técnicas con atención a seguridad y mantenibilidad.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <!-- PRINCIPLES -->
+            <section aria-labelledby="principles-heading">
+                <h2 id="principles-heading" class="section-header mono">02. Principles / Principios</h2>
+                <div class="principles">
+                    <article class="principle">
+                        <strong>Divulgación Mínima</strong>
+                        <span>Este sitio no publica currículums descargables, fotografías, teléfonos, correos directos ni documentación operativa.</span>
+                    </article>
+                    <article class="principle">
+                        <strong>Canales Verificables</strong>
+                        <span>Los perfiles profesionales enlazados sirven como punto de contacto y validación pública de identidad y trabajo.</span>
+                    </article>
+                    <article class="principle">
+                        <strong>Sin Seguimiento de Terceros</strong>
+                        <span>La página no carga analítica, píxeles publicitarios, fuentes remotas ni scripts de terceros.</span>
+                    </article>
+                    <article class="principle">
+                        <strong>Información Contextual</strong>
+                        <span>Las credenciales, referencias o documentos se comparten sólo cuando existe una necesidad profesional legítima.</span>
+                    </article>
+                </div>
+            </section>
+            
+            <!-- CONTACT -->
+            <section aria-labelledby="contact-heading" class="contact">
+                <h2 id="contact-heading" class="mono">03. Contacto</h2>
+                <p>Para oportunidades, colaboración o verificación profesional, utiliza LinkedIn. Esto reduce la exposición de datos de contacto y conserva una vía de comunicación moderada.</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a class="cta-btn" href="https://www.linkedin.com/in/mdasuaje" target="_blank" rel="me noopener noreferrer" aria-label="Enviar mensaje por LinkedIn">
+                        Conectar en LinkedIn
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </main>
+    
+        <!-- FOOTER -->
+        <footer role="contentinfo">
+            <span class="mono">AXIAL_ECOSYSTEM v2.0</span>
+            <span class="mono">Trasciende y Prospera</span>
+        </footer>
     </div>
-  </body>
+</body>
 </html>

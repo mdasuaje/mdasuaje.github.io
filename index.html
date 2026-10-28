@@ -9,20 +9,20 @@
     
     <!-- SEO & Identity Meta Tags -->
     <title>Mauro D. Asuaje G. | Professional Profile</title>
-    <meta name="description" content="Perfil profesional de Mauro D. Asuaje G.: sistemas de crecimiento, automatización e inteligencia documental. CLI-First, Zero-Trust, Agentic Workflows.">
+    <meta name="description" content="Desarrollador y especialista en automatización autodidacta. Convierto procesos manuales, documentación desordenada y flujos repetitivos en sistemas digitales simples, documentados y operables. Python, automatización, documentación técnica, soporte digital, flujos CLI, IA responsable.">
     <meta name="author" content="Mauro D. Asuaje G.">
     <meta name="robots" content="index, follow">
     
     <!-- OpenGraph / Social Media -->
     <meta property="og:title" content="Mauro D. Asuaje G. | Professional Profile">
-    <meta property="og:description" content="Sistemas de crecimiento, automatización e inteligencia documental. Ingeniería pragmática y reproducible.">
+    <meta property="og:description" content="Desarrollador y especialista en automatización autodidacta. Sistemas digitales simples, documentados y operables.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mdasuaje.github.io/">
     <meta property="og:locale" content="es_ES">
     <meta property="og:locale:alternate" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Mauro D. Asuaje G. | Professional Profile">
-    <meta name="twitter:description" content="Sistemas de crecimiento, automatización e inteligencia documental.">
+    <meta name="twitter:description" content="Desarrollador y especialista en automatización autodidacta. Python, automatización, documentación técnica, soporte digital, flujos CLI, IA responsable.">
     
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -30,17 +30,22 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Mauro D. Asuaje G.",
-      "jobTitle": "Growth Systems Engineer",
+      "jobTitle": "Automation Specialist & Self-Taught Developer",
       "url": "https://mdasuaje.github.io/",
       "sameAs": [
         "https://linkedin.com/in/mdasuaje"
       ],
       "knowsAbout": [
-        "Document Intelligence",
-        "Growth Automation",
-        "Systems Engineering",
-        "Serverless Architecture",
-        "Agentic Workflows"
+        "Python",
+        "Process Automation",
+        "Technical Documentation",
+        "Digital Support",
+        "CLI Workflows",
+        "AI-Assisted Workflows",
+        "Linux",
+        "Bash",
+        "GitHub Actions",
+        "AWS Serverless"
       ]
     }
     </script>
@@ -68,7 +73,7 @@
             
             --color-text-primary: #e8e8e8;
             --color-text-secondary: #a0a0a0;
-            --color-text-muted: #6a6a6a;
+            --color-text-muted: #7a7a7a;
             --color-text-inverse: #050505;
             
             --color-accent-primary: #2ecc71;
@@ -287,29 +292,37 @@
             letter-spacing: 0.03em;
         }
         
-        .metrics-grid { 
-            display: flex; 
-            gap: var(--space-8); 
+        /* Capabilities Grid (replaces metrics) */
+        .capabilities-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: var(--space-4); 
             margin-bottom: var(--space-10); 
-            flex-wrap: wrap; 
         }
-        .metric { 
+        .capability { 
             display: flex; 
             flex-direction: column; 
+            gap: var(--space-1);
+            padding: var(--space-4);
+            background-color: var(--color-bg-surface);
+            border: 1px solid var(--color-border-dim);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
         }
-        .metric-value { 
-            font-size: var(--fs-2xl); 
+        .capability:hover { 
+            background-color: var(--color-bg-surface-hover); 
+            border-color: var(--color-accent-primary-border); 
+        }
+        .capability-name { 
+            font-size: var(--fs-sm); 
             font-weight: 600; 
             color: #ffffff; 
             line-height: var(--lh-tight);
-            letter-spacing: -0.02em;
         }
-        .metric-label { 
+        .capability-desc { 
             font-size: var(--fs-xs); 
             color: var(--color-text-secondary); 
-            text-transform: uppercase; 
-            letter-spacing: 0.08em;
-            margin-top: var(--space-1);
+            line-height: var(--lh-normal);
         }
         
         .cta-group {
@@ -442,6 +455,36 @@
             line-height: var(--lh-relaxed);
         }
         
+        /* Target Roles */
+        .roles-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+            gap: var(--space-4); 
+            margin-top: var(--space-8);
+        }
+        .role-card {
+            background-color: var(--color-bg-surface);
+            border: 1px solid var(--color-border-dim);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            transition: all var(--transition-normal);
+        }
+        .role-card:hover {
+            background-color: var(--color-bg-surface-hover);
+            border-color: var(--color-accent-primary-border);
+        }
+        .role-title {
+            font-weight: 600;
+            font-size: var(--fs-sm);
+            color: #ffffff;
+            margin-bottom: var(--space-2);
+        }
+        .role-desc {
+            font-size: var(--fs-xs);
+            color: var(--color-text-secondary);
+            line-height: var(--lh-normal);
+        }
+        
         /* ==========================================================================
            PRINCIPLES SECTION
            ========================================================================== */
@@ -475,6 +518,43 @@
             color: var(--color-text-secondary);
             font-size: var(--fs-sm);
             line-height: var(--lh-relaxed);
+        }
+        
+        /* ==========================================================================
+           HONESTY NOTICE
+           ========================================================================== */
+        .honesty-notice {
+            background-color: var(--color-bg-surface);
+            border: 1px solid var(--color-accent-primary-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin-top: var(--space-8);
+        }
+        .honesty-notice h3 {
+            font-size: var(--fs-lg);
+            margin-bottom: var(--space-4);
+            padding-left: var(--space-3);
+            border-left: 3px solid var(--color-accent-primary);
+        }
+        .honesty-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-3);
+        }
+        .honesty-list li {
+            font-size: var(--fs-sm);
+            color: var(--color-text-secondary);
+            line-height: var(--lh-relaxed);
+            padding-left: var(--space-8);
+            position: relative;
+        }
+        .honesty-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent-primary);
+            font-weight: 600;
         }
         
         /* ==========================================================================
@@ -530,13 +610,16 @@
             .container { 
                 padding: var(--space-10) var(--space-4); 
             }
-            .metrics-grid { 
-                gap: var(--space-6); 
+            .capabilities-grid { 
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
             }
             .grid { 
                 grid-template-columns: 1fr; 
             }
             .principles {
+                grid-template-columns: 1fr;
+            }
+            .roles-grid {
                 grid-template-columns: 1fr;
             }
             footer { 
@@ -559,13 +642,16 @@
             .cta-group .cta-btn {
                 width: 100%;
             }
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         /* ==========================================================================
            PRINT STYLES
            ========================================================================== */
         @media print {
-            .hero-badge, .cta-btn, .cta-group, .metrics-grid, .lang-tag, .skip-link {
+            .hero-badge, .cta-btn, .cta-group, .capabilities-grid, .lang-tag, .skip-link {
                 display: none;
             }
             body {
@@ -589,13 +675,23 @@
                 border: 1px solid #ccc;
                 background: #fafafa;
             }
+            .role-card {
+                break-inside: avoid;
+                border: 1px solid #ccc;
+                background: white;
+            }
             .contact {
+                border: 1px solid #ccc;
+                background: white;
+            }
+            .honesty-notice {
                 border: 1px solid #ccc;
                 background: white;
             }
             h1, h2, h3 { color: black; }
             .card h3 { border-left-color: #333; }
             .principle { border-left-color: #333; }
+            .honesty-notice h3 { border-left-color: #333; }
             a { text-decoration: none; color: black; }
             .en-text { color: black; }
             .es-text { color: #555; }
@@ -611,22 +707,34 @@
         <header class="hero">
             <span class="hero-badge mono">PUBLIC PROFILE</span>
             <h1>Mauro D. Asuaje G.</h1>
-            <h2>Growth Systems Engineer & Document Intelligence Architect</h2>
+            <h2>Desarrollador y especialista en automatización autodidacta</h2>
             <span class="lang-tag mono">EN (Professional) / ES (Nativo)</span>
             
-            <div class="metrics-grid">
-                <div class="metric">
-                    <span class="metric-value mono">CLI-First</span>
-                    <span class="metric-label mono">Architecture</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value mono">Agentic</span>
-                    <span class="metric-label mono">Workflows</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value mono">Zero-Trust</span>
-                    <span class="metric-label mono">Security</span>
-                </div>
+            <div class="capabilities-grid">
+                <article class="capability">
+                    <span class="capability-name mono">Python y automatización</span>
+                    <span class="capability-desc">Procesos, ETL, pipelines CLI</span>
+                </article>
+                <article class="capability">
+                    <span class="capability-name mono">Documentación técnica</span>
+                    <span class="capability-desc">Organización del conocimiento</span>
+                </article>
+                <article class="capability">
+                    <span class="capability-name mono">Soporte digital</span>
+                    <span class="capability-desc">Resolución práctica de problemas</span>
+                </article>
+                <article class="capability">
+                    <span class="capability-name mono">Flujos CLI reproducibles</span>
+                    <span class="capability-desc">Bash, GitHub Actions, operaciones</span>
+                </article>
+                <article class="capability">
+                    <span class="capability-name mono">Integraciones y IA responsable</span>
+                    <span class="capability-desc">APIs, agentes, uso ético</span>
+                </article>
+                <article class="capability">
+                    <span class="capability-name mono">Aprendizaje autónomo continuo</span>
+                    <span class="capability-desc">Autoformación técnica constante</span>
+                </article>
             </div>
     
             <div class="cta-group">
@@ -647,46 +755,77 @@
             </div>
         </header>
     
-        <!-- DOMAINS OF EXPERTISE -->
+        <!-- CORE DOMAINS -->
         <main id="main-content">
             <section aria-labelledby="domains-heading">
-                <h2 id="domains-heading" class="section-header mono">01. Core Domains / Dominios Principales</h2>
+                <h2 id="domains-heading" class="section-header mono">01. Dominios Principales / Core Domains</h2>
                 <div class="grid">
-                    <!-- SYS.01 -->
+                    <!-- DOM.01 -->
                     <article class="card">
-                        <span class="card-id mono">SYS.01</span>
-                        <h3>Inteligencia Documental</h3>
+                        <span class="card-id mono">DOM.01</span>
+                        <h3>Automatización y Python</h3>
                         <div class="bilingual-text">
-                            <p class="en-text" lang="en">Agentic parsing, corpus normalization, and RAG knowledge bases. Optimization of cognitive flows for high-level automation.</p>
-                            <p class="es-text" lang="es">Parsing agéntico, normalización de corpus y bases RAG. Optimización de flujos cognitivos para automatización de alto nivel.</p>
+                            <p class="en-text" lang="en">Process automation, ETL pipelines, CLI tools. Bash, Python, GitHub Actions for reproducible operations.</p>
+                            <p class="es-text" lang="es">Automatización de procesos, pipelines ETL, herramientas CLI. Bash, Python, GitHub Actions para operaciones reproducibles.</p>
                         </div>
                     </article>
     
-                    <!-- SYS.02 -->
+                    <!-- DOM.02 -->
                     <article class="card">
-                        <span class="card-id mono">SYS.02</span>
-                        <h3>Automatización de Crecimiento</h3>
+                        <span class="card-id mono">DOM.02</span>
+                        <h3>Documentación y Conocimiento</h3>
                         <div class="bilingual-text">
-                            <p class="en-text" lang="en">CLI-first pipelines, AWS flows, and serverless architecture. Systems engineering focused on continuous technical scalability.</p>
-                            <p class="es-text" lang="es">Pipelines CLI-first, flujos AWS y arquitectura serverless. Ingeniería orientada a la escalabilidad técnica ininterrumpida.</p>
+                            <p class="en-text" lang="en">Technical documentation, knowledge organization, information architecture. Transforming messy docs into operable systems.</p>
+                            <p class="es-text" lang="es">Documentación técnica, organización del conocimiento, arquitectura de información. Transformar documentación desordenada en sistemas operables.</p>
                         </div>
                     </article>
     
-                    <!-- SYS.03 -->
+                    <!-- DOM.03 -->
                     <article class="card">
-                        <span class="card-id mono">SYS.03</span>
-                        <h3>Ingeniería de Sistemas</h3>
+                        <span class="card-id mono">DOM.03</span>
+                        <h3>Soporte y Operaciones Digitales</h3>
                         <div class="bilingual-text">
-                            <p class="en-text" lang="en">Practical architecture, continuous improvement, and technical decisions with attention to security and maintainability.</p>
-                            <p class="es-text" lang="es">Arquitectura práctica, mejora continua y decisiones técnicas con atención a seguridad y mantenibilidad.</p>
+                            <p class="en-text" lang="en">Digital support, practical problem resolution, system reliability. AWS serverless, Linux CLI, incident response.</p>
+                            <p class="es-text" lang="es">Soporte digital, resolución práctica de problemas, fiabilidad de sistemas. AWS serverless, Linux CLI, respuesta a incidentes.</p>
                         </div>
+                    </article>
+                </div>
+            </section>
+            
+            <!-- TARGET ROLES -->
+            <section aria-labelledby="roles-heading">
+                <h2 id="roles-heading" class="section-header mono">02. Roles Objetivo / Target Roles (Remotos, Autónomos)</h2>
+                <div class="roles-grid">
+                    <article class="role-card">
+                        <span class="role-title">IT Support / Technical Support</span>
+                        <span class="role-desc">Soporte técnico, resolución de incidencias, administración de sistemas</span>
+                    </article>
+                    <article class="role-card">
+                        <span class="role-title">Automation Specialist</span>
+                        <span class="role-desc">Automatización de procesos, pipelines CLI, scripting Python/Bash</span>
+                    </article>
+                    <article class="role-card">
+                        <span class="role-title">Technical Documentation Specialist</span>
+                        <span class="role-desc">Documentación técnica, knowledge bases, organización de información</span>
+                    </article>
+                    <article class="role-card">
+                        <span class="role-title">Operations Support</span>
+                        <span class="role-desc">Operaciones digitales, monitoreo, flujos de trabajo reproducibles</span>
+                    </article>
+                    <article class="role-card">
+                        <span class="role-title">Junior/Mid Python Developer</span>
+                        <span class="role-desc">Desarrollo Python, APIs, automatización, según evidencia real</span>
+                    </article>
+                    <article class="role-card">
+                        <span class="role-title">AI-Assisted Workflow Support</span>
+                        <span class="role-desc">Integraciones con IA, agentes, flujos asistidos responsablemente</span>
                     </article>
                 </div>
             </section>
             
             <!-- PRINCIPLES -->
             <section aria-labelledby="principles-heading">
-                <h2 id="principles-heading" class="section-header mono">02. Principles / Principios</h2>
+                <h2 id="principles-heading" class="section-header mono">03. Principios / Principles</h2>
                 <div class="principles">
                     <article class="principle">
                         <strong>Divulgación Mínima</strong>
@@ -704,12 +843,31 @@
                         <strong>Información Contextual</strong>
                         <span>Las credenciales, referencias o documentos se comparten sólo cuando existe una necesidad profesional legítima.</span>
                     </article>
+                    <article class="principle">
+                        <strong>Honestidad Radical</strong>
+                        <span>No se atribuyen títulos universitarios, experiencia comercial no demostrable, ingresos no recibidos, ni títulos "Senior"/"Architect" sin evidencia. Inglés presentado con precisión.</span>
+                    </article>
+                </div>
+            </section>
+            
+            <!-- HONESTY NOTICE -->
+            <section aria-labelledby="honesty-heading">
+                <div class="honesty-notice">
+                    <h3 class="mono">Reglas de Honestidad Aplicadas</h3>
+                    <ul class="honesty-list">
+                        <li>No títulos universitarios no poseídos</li>
+                        <li>No experiencia comercial no demostrable</li>
+                        <li>No ingresos no recibidos declarados</li>
+                        <li>No "Senior" ni "Architect" sin evidencia</li>
+                        <li>Inglés presentado con precisión</li>
+                        <li>Perfil: autodidacta, capacidades demostrables</li>
+                    </ul>
                 </div>
             </section>
             
             <!-- CONTACT -->
             <section aria-labelledby="contact-heading" class="contact">
-                <h2 id="contact-heading" class="mono">03. Contacto</h2>
+                <h2 id="contact-heading" class="mono">04. Contacto / Contact</h2>
                 <p>Para oportunidades, colaboración o verificación profesional, utiliza LinkedIn. Esto reduce la exposición de datos de contacto y conserva una vía de comunicación moderada.</p>
                 <div class="cta-group" style="justify-content: center;">
                     <a class="cta-btn" href="https://www.linkedin.com/in/mdasuaje" target="_blank" rel="me noopener noreferrer" aria-label="Enviar mensaje por LinkedIn">

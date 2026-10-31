@@ -15,6 +15,7 @@
 !/.gitignore
 !/index.html
 !/README.md
+!/LESSONS.md
 !/fonts/
 !/fonts/**
 !/.well-known/
@@ -23,6 +24,8 @@
 !/.github/**
 !/.github/workflows/
 !/.github/workflows/**
+!/docs/
+!/docs/**
 
 # -----------------------------------------------------------------------------
 # BLOCK ALL PRIVATE / SESSION / RUNTIME ARTIFACTS (defense in depth)

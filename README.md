@@ -70,9 +70,16 @@ It serves as a verifiable reference point for my professional identity, capabili
 ```
 mdasuaje.github.io/
 ├── index.html          # Complete profile (self-contained, no dependencies)
+│   └── #value-proposition — Ventaja Competitiva e Intersección Generacional
 ├── fonts/              # Self-hosted Inter + JetBrains Mono (WOFF2)
 ├── .gitignore          # Excludes session files, local artifacts
-└── README.md           # This file
+├── docs/
+│   ├── prompts/
+│   │   └── system_prompt_ingesta_003.md  # System prompt para agentes de IA locales
+│   └── manuals/
+│       └── sop_develop_branch.md          # SOP para trabajo en rama develop
+├── README.md           # This file
+└── LESSONS.md          # Changelog de conocimiento
 ```
 
 ## Deployment
@@ -84,6 +91,26 @@ git push origin main  # Deploys to https://mdasuaje.github.io/
 ```
 
 Build status: [GitHub Actions → Pages workflow](https://github.com/mdasuaje/mdasuaje.github.io/actions/workflows/pages/pages-build-deployment)
+
+## Rama de Desarrollo (`develop`)
+
+Todos los cambios de desarrollo se realizan en la rama `develop` para proteger `main` como muestra profesional del portafolio público:
+
+```bash
+git checkout develop
+git pull origin develop
+# ... implementar cambios ...
+git commit -m "<tipo>(<scope>): <descripción>"
+git push origin develop
+```
+
+**Estado actual:** `develop` sincronizada con `origin/develop` (commit `65a4135`). `main` permanece intacta en `fd61ae0`.
+
+**Cambios recientes en `develop`:**
+- `index.html`: sección `#value-proposition` (Ventaja Competitiva e Intersección Generacional) y JSON-LD `Person` schema actualizado con `jobTitle` expandido y `knowsAbout` alineado a INGESTA 002/003.
+- `docs/prompts/system_prompt_ingesta_003.md`: system prompt para agentes de IA locales.
+- `docs/manuals/sop_develop_branch.md`: SOP para trabajo en rama `develop` con protección de `main`.
+- `LESSONS.md`: entrada sobre integración de INGESTA 003 y rama de desarrollo.
 
 ## Verification
 

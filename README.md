@@ -1,6 +1,6 @@
 # Mauro D. Asuaje G. — Professional Profile
 
-> **Desarrollador y especialista en automatización autodidacta**  
+> **Desarrollador autodidacta especialista en automatización**  
 > Python · Automatización · Documentación Técnica · Soporte Digital · Flujos CLI · IA Responsable
 
 [![Website](https://img.shields.io/badge/Website-mdasuaje.github.io-2ecc71?style=flat-square&logo=githubpages&logoColor=white)](https://mdasuaje.github.io/)

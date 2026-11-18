@@ -36,12 +36,12 @@ It serves as a verifiable reference point for my professional identity, capabili
 
 ## Roles Objetivo (Remotos, Autónomos)
 
-- **IT Support / Technical Support** — Soporte técnico, resolución de incidencias, administración de sistemas
-- **Automation Specialist** — Automatización de procesos, pipelines CLI, scripting Python/Bash
-- **Technical Documentation Specialist** — Documentación técnica, knowledge bases, organización de información
-- **Operations Support** — Operaciones digitales, monitoreo, flujos de trabajo reproducibles
-- **Junior/Mid Python Developer** — Desarrollo Python, APIs, automatización, según evidencia real
-- **AI-Assisted Workflow Support** — Integraciones con IA, agentes, flujos asistidos responsablemente
+- **Automation Specialist** — Automatización de procesos manuales, flujos CLI, RPA ligero, orquestación de tareas. Contratista W-8BEN, 100% remote.
+- **Technical Documentation Specialist** — Documentación técnica, APIs, guías de usuario, knowledge bases, docs-as-code. Contratista W-8BEN, 100% remote.
+- **Operations Support & Site Reliability** — Soporte operacional, confiabilidad, monitoreo, respuesta a incidentes, automatización de runbooks. Contratista W-8BEN, 100% remote.
+- **IT Support / Technical Support** — Soporte técnico remoto, resolución de incidencias, gestión de tickets, administración de accesos. Contratista W-8BEN, 100% remote.
+- **AI-Assisted Workflow Support** — Integración LLM, pipelines RAG, flujos agentic, automatización con IA. Nivel demostrable: integración práctica, no investigación.
+- **Python Engineer — Automation & Systems** — Desarrollo backend Python, APIs, automatización, testing. Evidencia real: arquitectura completa job-mining-engine, criterio senior.
 
 ## Principios de Diseño (5)
 

@@ -9,11 +9,9 @@
 
 ---
 
-## Overview
+## About
 
-This repository hosts the source code for my **professional public profile** — a minimal, privacy-respecting, and technically refined presence at **[mdasuaje.github.io](https://mdasuaje.github.io/)**.
-
-It serves as a verifiable reference point for my professional identity, capabilities, and principles. No downloadable CVs, no direct contact data, no third-party tracking — only canonical links to verified professional channels.
+Professional profile of Mauro D. Asuaje G. — Growth Systems Engineer & Document Intelligence Architect. CLI-First, Zero-Trust, Agentic Workflows.
 
 ## Capacidades Demostrables (6)
 
@@ -104,13 +102,13 @@ git commit -m "<tipo>(<scope>): <descripción>"
 git push origin develop
 ```
 
-**Estado actual:** `develop` sincronizada con `origin/develop` (commit `65a4135`). `main` permanece intacta en `fd61ae0`.
+**Estado actual:** `main` sincronizada con `origin/main` (commit `dcbd41b`, PR #1 merged). `develop` sincronizada con `origin/develop` (commit `861d79d`).
 
-**Cambios recientes en `develop`:**
-- `index.html`: sección `#value-proposition` (Ventaja Competitiva e Intersección Generacional) y JSON-LD `Person` schema actualizado con `jobTitle` expandido y `knowsAbout` alineado a INGESTA 002/003.
+**Cambios recientes (sincronización con `profile/mauro.yaml` de `job-mining-engine`):**
+- `index.html`: hero h2 → `CLI-First Automation Specialist | Systems / Automation / Pipeline Engineer`; roles objetivo reordenados según `profile/mauro.yaml`; `Junior/Mid Python Developer` reemplazado por `Python Engineer — Automation & Systems`; `#value-proposition` dentro de `<main>`; `lang` marcado en `capability-desc`.
+- `README.md`: roles objetivo sincronizados con `index.html`; sección "About" añadida; estado de ramas actualizado.
 - `docs/prompts/system_prompt_ingesta_003.md`: system prompt para agentes de IA locales.
 - `docs/manuals/sop_develop_branch.md`: SOP para trabajo en rama `develop` con protección de `main`.
-- `LESSONS.md`: entrada sobre integración de INGESTA 003 y rama de desarrollo.
 
 ## Verification
 

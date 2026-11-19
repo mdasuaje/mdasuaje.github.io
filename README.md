@@ -11,7 +11,7 @@
 
 ## About
 
-Professional profile of Mauro D. Asuaje G. — Growth Systems Engineer & Document Intelligence Architect. CLI-First, Zero-Trust, Agentic Workflows.
+Professional profile of Mauro D. Asuaje G. — CLI-First Automation Specialist | Systems / Automation / Pipeline Engineer.
 
 ## Capacidades Demostrables (6)
 
